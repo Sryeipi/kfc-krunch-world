@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>KRUNCH WORLD — KFC Ecuador · Now on Roblox</title>
+<meta name="description" content="El mundo digital de KFC Ecuador ya existe. Juega KRUNCH WORLD gratis — Now on Roblox. Móvil y PC." />
+<meta name="theme-color" content="#0c0710" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="KRUNCH WORLD — KFC Ecuador" />
+<meta property="og:description" content="El mundo digital de KFC Ecuador ya existe. Now on Roblox." />
+<meta property="og:image" content="a/og.jpg" />
+
+<style>
+/* ============ FONTS ============ */
+@font-face{font-family:"National2";src:url("a/n2-regular.woff2") format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"National2";src:url("a/n2-bold.woff2") format("woff2");font-weight:700;font-display:swap}
+@font-face{font-family:"National2Cond";src:url("a/n2-cond.woff2") format("woff2");font-weight:700;font-display:swap}
+
+/* ============ TOKENS ============ */
+:root{
+  --red:#E4002B; --red-2:#ff2e57; --red-dk:#a8001f;
+  --ink:#0b0610; --ink-2:#140b1c; --ink-3:#1d1126;
+  --cream:#ffffff; --muted:#c8bcd2;
+  --sun:#ff7a3d; --grape:#7a52b8; --gold:#ffc24b;
+  --maxw:1200px;
+  --r:18px;
+  --ease:cubic-bezier(.22,1,.36,1);
+  font-synthesis:none;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:"National2",system-ui,sans-serif;
+  background:var(--ink); color:var(--cream);
+  overflow-x:hidden; line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.cond{font-family:"National2Cond","National2",sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.01em}
+.wrap{width:100%;max-width:var(--maxw);margin-inline:auto;padding-inline:clamp(18px,5vw,40px)}
+
+/* ============ HEADER ============ */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:60;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:14px clamp(18px,5vw,40px);
+  transition:background .4s var(--ease),backdrop-filter .4s var(--ease),padding .4s var(--ease);
+}
+header.solid{background:rgba(11,6,16,.82);backdrop-filter:blur(14px);padding-block:10px;border-bottom:1px solid rgba(255,255,255,.06)}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{height:30px;filter:brightness(0) invert(1)}
+.brand b{font-family:"National2Cond";font-size:18px;letter-spacing:.06em;text-transform:uppercase;opacity:.95}
+.nav{display:flex;align-items:center;gap:30px}
+.nav a.lk{font-size:14px;letter-spacing:.04em;text-transform:uppercase;font-weight:700;opacity:.78;transition:opacity .25s}
+.nav a.lk:hover{opacity:1}
+.btn{
+  --bg:var(--red);
+  display:inline-flex;align-items:center;gap:9px;
+  font-family:"National2Cond";text-transform:uppercase;letter-spacing:.04em;
+  font-size:16px;line-height:1;
+  padding:13px 24px;border-radius:100px;
+  background:var(--bg);color:#fff;border:none;cursor:pointer;
+  transition:transform .2s var(--ease),box-shadow .3s var(--ease),background .3s;
+  box-shadow:0 8px 28px -8px rgba(228,0,43,.7);
+  white-space:nowrap;
+}
+.btn:hover{transform:translateY(-2px) scale(1.02);box-shadow:0 14px 38px -8px rgba(228,0,43,.9)}
+.btn:active{transform:translateY(0) scale(.99)}
+.btn.ghost{background:rgba(255,255,255,.07);box-shadow:none;border:1.5px solid rgba(255,255,255,.22)}
+.btn.ghost:hover{background:rgba(255,255,255,.14)}
+.btn.big{font-size:20px;padding:18px 34px}
+.btn .ar{transition:transform .25s var(--ease)}
+.btn:hover .ar{transform:translateX(4px)}
+@media(max-width:820px){.nav a.lk{display:none}.btn{padding:11px 18px;font-size:14px}}
+
+/* ============ TICKER ============ */
+.ticker{
+  position:relative;z-index:5;overflow:hidden;
+  background:var(--red);
+  border-block:1px solid rgba(0,0,0,.15);
+  padding:9px 0;
+}
+.ticker .row{display:flex;width:max-content;animation:slide 28s linear infinite}
+.ticker span{
+  font-family:"National2Cond";text-transform:uppercase;letter-spacing:.08em;
+  font-size:14px;padding-inline:26px;display:inline-flex;align-items:center;gap:26px;white-space:nowrap;
+}
+.ticker .dot{width:7px;height:7px;border-radius:50%;background:#fff;display:inline-block}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* ============ HERO ============ */
+.hero{
+  position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;
+  padding-top:96px;padding-bottom:48px;overflow:hidden;isolation:isolate;
+}
+.hero-bg{position:absolute;inset:0;z-index:-3}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:50% 55%;
+  transform:scale(1.14);animation:kb 24s ease-in-out infinite alternate;
+  filter:saturate(1.05) blur(5px) brightness(.8)}
+@keyframes kb{to{transform:scale(1.24) translateY(-2%)}}
+.hero::before{content:"";position:absolute;inset:0;z-index:-2;
+  background:
+   radial-gradient(120% 90% at 18% 30%,rgba(11,6,16,.35),rgba(11,6,16,.86) 60%,var(--ink) 100%),
+   linear-gradient(180deg,rgba(11,6,16,.55) 0%,rgba(11,6,16,0) 25%,rgba(11,6,16,.2) 60%,var(--ink) 100%);
+}
+.aurora{position:absolute;inset:-20%;z-index:-2;pointer-events:none;mix-blend-mode:screen;opacity:.55;
+  background:
+   radial-gradient(40% 40% at 20% 30%,var(--grape),transparent 70%),
+   radial-gradient(35% 35% at 80% 20%,var(--sun),transparent 70%),
+   radial-gradient(45% 45% at 65% 80%,var(--red),transparent 70%);
+  animation:drift 18s ease-in-out infinite alternate;filter:blur(20px)}
+@keyframes drift{to{transform:translate3d(3%,-3%,0) scale(1.1)}}
+.grain{position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.05;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>")}
+
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:30px;width:100%}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr;text-align:center;gap:8px}}
+
+.badge{display:inline-flex;align-items:center;gap:12px;margin-bottom:22px;
+  animation:rise .8s var(--ease) both}
+.badge img{height:34px;border-radius:7px}
+.badge .kick{font-family:"National2Cond";font-size:13px;letter-spacing:.16em;text-transform:uppercase;opacity:.85}
+@media(max-width:900px){.badge{justify-content:center}}
+
+.hero h1{margin:0 0 6px;animation:rise .8s .05s var(--ease) both}
+.hero h1 img{width:min(560px,90%);max-width:100%;filter:drop-shadow(0 12px 40px rgba(0,0,0,.55));
+  margin-bottom:4px}
+@media(max-width:900px){.hero h1 img{margin-inline:auto;width:min(440px,86%)}}
+.hero .lead{font-size:clamp(18px,2.4vw,24px);max-width:30ch;color:#f3ecf7;margin:10px 0 6px;
+  animation:rise .8s .12s var(--ease) both}
+@media(max-width:900px){.hero .lead{margin-inline:auto}}
+.hero .sub{font-size:14px;letter-spacing:.04em;text-transform:uppercase;opacity:.7;margin-bottom:26px;
+  font-family:"National2Cond";animation:rise .8s .18s var(--ease) both}
+
+.cta-row{display:flex;gap:14px;flex-wrap:wrap;animation:rise .8s .24s var(--ease) both}
+@media(max-width:900px){.cta-row{justify-content:center}}
+@keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+
+/* characters */
+.cast{position:relative;height:min(62vh,560px);min-height:380px}
+@media(max-width:900px){.cast{height:46vh;min-height:320px;margin-top:6px;order:-1}}
+.cast figure{position:absolute;bottom:0;filter:drop-shadow(0 24px 30px rgba(0,0,0,.5))}
+.cast .c-coronel{left:50%;transform:translateX(-50%);height:100%;z-index:3;animation:floatA 6s ease-in-out infinite}
+.cast .c-km{left:2%;height:74%;z-index:2;animation:floatB 7s ease-in-out infinite}
+.cast .c-pacho{right:0;height:80%;z-index:2;animation:floatA 6.6s ease-in-out infinite .4s}
+.cast figure img{height:100%;width:auto}
+@keyframes floatA{50%{transform:translateX(-50%) translateY(-16px)}}
+@keyframes floatB{50%{transform:translateY(-12px)}}
+.cast .glow{position:absolute;bottom:-4%;left:50%;transform:translateX(-50%);
+  width:78%;height:60px;background:radial-gradient(50% 50% at 50% 50%,rgba(228,0,43,.55),transparent 70%);
+  filter:blur(14px);z-index:1}
+
+.scroll-hint{position:absolute;left:50%;bottom:18px;transform:translateX(-50%);z-index:4;
+  font-family:"National2Cond";font-size:11px;letter-spacing:.22em;text-transform:uppercase;opacity:.55;
+  display:flex;flex-direction:column;align-items:center;gap:7px;animation:bob 2s ease-in-out infinite}
+.scroll-hint i{width:1px;height:26px;background:linear-gradient(#fff,transparent)}
+@keyframes bob{50%{transform:translateX(-50%) translateY(6px)}}
+@media(max-width:900px){.scroll-hint{display:none}}
+
+/* ============ WORLD STRIP ============ */
+.world{padding:64px 0 56px;text-align:center;position:relative}
+.eyebrow{font-family:"National2Cond";font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--red-2)}
+.world h2,.enter h2{font-family:"National2Cond";font-size:clamp(30px,5vw,52px);text-transform:uppercase;
+  line-height:.98;margin:8px 0 6px}
+.world p{color:var(--muted);max-width:46ch;margin:0 auto 30px;font-size:16px}
+.gallery{position:relative;overflow:hidden;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);
+          mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
+.gallery .track{display:flex;gap:18px;width:max-content;animation:slide 36s linear infinite}
+.gallery:hover .track{animation-play-state:paused}
+.gallery .shot{width:clamp(280px,42vw,460px);aspect-ratio:16/9;border-radius:var(--r);overflow:hidden;
+  border:1px solid rgba(255,255,255,.08);box-shadow:0 20px 50px -20px rgba(0,0,0,.8);position:relative}
+.gallery .shot img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+.gallery .shot:hover img{transform:scale(1.06)}
+
+/* ============ ENTER (BRIDGE) ============ */
+.enter{padding:70px 0 80px;position:relative;
+  background:linear-gradient(180deg,var(--ink) 0%,var(--ink-2) 50%,var(--ink) 100%)}
+.enter .head{text-align:center;margin-bottom:34px}
+.enter p.intro{color:var(--muted);max-width:48ch;margin:8px auto 0;font-size:16px}
+.tabs{display:flex;gap:8px;justify-content:center;margin-bottom:34px}
+.tab{font-family:"National2Cond";text-transform:uppercase;letter-spacing:.04em;font-size:16px;
+  padding:12px 26px;border-radius:100px;background:rgba(255,255,255,.06);
+  border:1.5px solid rgba(255,255,255,.12);cursor:pointer;color:#fff;transition:.25s var(--ease);
+  display:inline-flex;align-items:center;gap:9px}
+.tab.active{background:var(--red);border-color:var(--red);box-shadow:0 10px 30px -10px rgba(228,0,43,.8)}
+.steps{display:none;grid-template-columns:repeat(3,1fr);gap:18px;max-width:980px;margin:0 auto}
+.steps.show{display:grid;animation:rise .5s var(--ease) both}
+@media(max-width:760px){.steps{grid-template-columns:1fr;max-width:460px}}
+.step{background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));
+  border:1px solid rgba(255,255,255,.09);border-radius:var(--r);padding:26px 22px;position:relative;
+  transition:transform .3s var(--ease),border-color .3s}
+.step:hover{transform:translateY(-5px);border-color:rgba(228,0,43,.5)}
+.step .n{font-family:"National2Cond";font-size:40px;color:var(--red-2);line-height:1;
+  display:block;margin-bottom:14px;opacity:.9}
+.step h3{font-family:"National2Cond";text-transform:uppercase;font-size:19px;margin-bottom:7px;letter-spacing:.01em}
+.step p{color:var(--muted);font-size:14.5px}
+.step p b{color:#fff;font-weight:700}
+.enter .final{text-align:center;margin-top:40px}
+.enter .final .btn{margin-bottom:14px}
+.enter .final small{display:block;color:var(--muted);font-size:13px;letter-spacing:.04em}
+
+/* ============ MODAL ============ */
+.modal{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;
+  background:rgba(5,2,8,.86);backdrop-filter:blur(8px);padding:20px}
+.modal.open{display:flex;animation:fade .3s ease}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.modal .box{width:min(960px,100%);aspect-ratio:16/9;border-radius:16px;overflow:hidden;
+  box-shadow:0 30px 90px -20px #000;position:relative;background:#000}
+.modal video{width:100%;height:100%;object-fit:contain;background:#000}
+.modal .x{position:absolute;top:-46px;right:0;background:rgba(255,255,255,.1);border:none;color:#fff;
+  width:38px;height:38px;border-radius:50%;font-size:20px;cursor:pointer;transition:.2s}
+.modal .x:hover{background:var(--red)}
+
+/* ============ FOOTER ============ */
+footer{padding:56px 0 40px;border-top:1px solid rgba(255,255,255,.07);background:var(--ink)}
+.f-grid{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;margin-bottom:34px}
+.f-brand{max-width:320px}
+.f-brand img.kw{width:200px;filter:none;margin-bottom:14px}
+.f-brand p{color:var(--muted);font-size:14px}
+.f-cols{display:flex;gap:56px;flex-wrap:wrap}
+.f-col h4{font-family:"National2Cond";text-transform:uppercase;letter-spacing:.1em;font-size:13px;
+  opacity:.6;margin-bottom:14px}
+.f-col a{display:block;color:var(--muted);font-size:14.5px;margin-bottom:10px;transition:color .2s}
+.f-col a:hover{color:#fff}
+.f-badge img{height:40px;border-radius:8px}
+.legal{border-top:1px solid rgba(255,255,255,.06);padding-top:22px;display:flex;justify-content:space-between;
+  gap:18px;flex-wrap:wrap;align-items:center}
+.legal p{color:#8a7e95;font-size:12.5px;max-width:62ch;line-height:1.55}
+.legal .cr{color:#6f6480;font-size:12.5px;white-space:nowrap}
+
+@media(prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto}}
+.js .reveal{opacity:0;transform:translateY(30px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.js .reveal.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header id="hdr">
+  <a class="brand" href="#top" aria-label="KFC Krunch World">
+    <img src="a/kfc.webp" alt="KFC" />
+    <b>Krunch&nbsp;World</b>
+  </a>
+  <nav class="nav">
+    <a class="lk" href="#mundo">Mundo</a>
+    <a class="lk" href="#entrar">Cómo entrar</a>
+    <a class="btn" href="https://www.roblox.com/games/87467127448241/KFC-KRUNCH-WORLD" target="_blank" rel="noopener">Jugar ahora <span class="ar">→</span></a>
+  </nav>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="top">
+  <div class="hero-bg"><img src="a/bg.jpg" alt="" aria-hidden="true" id="kvbg" /></div>
+  <div class="aurora"></div>
+  <div class="grain"></div>
+
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <div class="badge">
+        <img src="a/roblox.webp" alt="Now on Roblox" />
+        <span class="kick">KFC Ecuador</span>
+      </div>
+      <h1><img src="a/logo.webp" alt="KRUNCH WORLD" /></h1>
+      <p class="lead">El mundo digital de KFC Ecuador ya existe.</p>
+      <p class="sub">Gratis · Móvil y PC · Now on Roblox</p>
+      <div class="cta-row">
+        <a class="btn big" href="https://www.roblox.com/games/87467127448241/KFC-KRUNCH-WORLD" target="_blank" rel="noopener">Jugar ahora <span class="ar">→</span></a>
+        <button class="btn big ghost" id="openTrailer">▶ Ver tráiler</button>
+      </div>
+    </div>
+
+    <div class="cast" id="cast">
+      <div class="glow"></div>
+      <figure class="c-km"   data-depth="18"><img src="a/km.webp" alt="KM" /></figure>
+      <figure class="c-pacho" data-depth="26"><img src="a/pacho.webp" alt="Pacho" /></figure>
+      <figure class="c-coronel" data-depth="10"><img src="a/coronel.webp" alt="El Coronel" /></figure>
+    </div>
+  </div>
+
+  <div class="scroll-hint">Explora<i></i></div>
+</section>
+
+<!-- ===== TICKER ===== -->
+<div class="ticker" aria-hidden="true">
+  <div class="row" id="tickRow">
+    <span><b class="cond">Now on Roblox</b><i class="dot"></i> Krunch World ya está abierto <i class="dot"></i> Misión activa: encuentra la KM <i class="dot"></i> El Coronel sabe más de lo que dice <i class="dot"></i></span>
+    <span><b class="cond">Now on Roblox</b><i class="dot"></i> Krunch World ya está abierto <i class="dot"></i> Misión activa: encuentra la KM <i class="dot"></i> El Coronel sabe más de lo que dice <i class="dot"></i></span>
+  </div>
+</div>
+
+<!-- ===== WORLD STRIP ===== -->
+<section class="world" id="mundo">
+  <div class="wrap reveal">
+    <span class="eyebrow">El mundo</span>
+    <h2>Un universo KFC para explorar</h2>
+    <p>Biomas, misiones, la Arena KFC y secretos por descubrir. Todo dentro de Roblox.</p>
+  </div>
+  <div class="gallery reveal" aria-hidden="true">
+    <div class="track">
+      <div class="shot"><img src="a/ss1.jpg" alt="" /></div>
+      <div class="shot"><img src="a/ss6.jpg" alt="" /></div>
+      <div class="shot"><img src="a/ss4.jpg" alt="" /></div>
+      <div class="shot"><img src="a/ss1.jpg" alt="" /></div>
+      <div class="shot"><img src="a/ss6.jpg" alt="" /></div>
+      <div class="shot"><img src="a/ss4.jpg" alt="" /></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ENTER / BRIDGE ===== -->
+<section class="enter" id="entrar">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow">Guía rápida</span>
+      <h2>Cómo entrar a Krunch World</h2>
+      <p class="intro">Tres pasos y estás dentro. Elige tu plataforma.</p>
+    </div>
+
+    <div class="tabs reveal">
+      <button class="tab active" data-tab="movil">📱 Móvil</button>
+      <button class="tab" data-tab="pc">💻 PC / Mac</button>
+    </div>
+
+    <!-- MÓVIL -->
+    <div class="steps show" id="tab-movil">
+      <div class="step"><span class="n">1</span><h3>Abre Roblox</h3><p>Descarga o abre la app de <b>Roblox</b> en tu celular (App Store o Play Store).</p></div>
+      <div class="step"><span class="n">2</span><h3>Busca el mundo</h3><p>Escribe <b>"KRUNCH WORLD"</b> en la lupa — o solo toca <b>Jugar ahora</b> aquí abajo.</p></div>
+      <div class="step"><span class="n">3</span><h3>Dale Play</h3><p>Presiona el botón verde <b>Play</b>. Carga en segundos. <b>Bienvenido.</b></p></div>
+    </div>
+
+    <!-- PC -->
+    <div class="steps" id="tab-pc">
+      <div class="step"><span class="n">1</span><h3>Entra a roblox.com</h3><p>Inicia sesión o crea tu cuenta <b>gratis</b> (menos de 2 minutos).</p></div>
+      <div class="step"><span class="n">2</span><h3>Busca el mundo</h3><p>Escribe <b>"KRUNCH WORLD"</b> en la barra — o toca <b>Jugar ahora</b> aquí abajo.</p></div>
+      <div class="step"><span class="n">3</span><h3>Dale Play</h3><p>Clic en <b>Play</b>. El cliente se instala solo la primera vez.</p></div>
+    </div>
+
+    <div class="final reveal">
+      <a class="btn big" href="https://www.roblox.com/games/87467127448241/KFC-KRUNCH-WORLD" target="_blank" rel="noopener">Jugar ahora <span class="ar">→</span></a>
+      <small>Te lleva directo a KRUNCH WORLD en Roblox</small>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MODAL TRAILER ===== -->
+<div class="modal" id="trailerModal">
+  <div class="box">
+    <button class="x" id="closeTrailer" aria-label="Cerrar">✕</button>
+    <video id="trailerVid" controls playsinline preload="none" poster="a/og.jpg">
+      <source src="a/trailer.mp4" type="video/mp4" />
+    </video>
+  </div>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div class="f-brand">
+        <img class="kw" src="a/logo.webp" alt="KRUNCH WORLD" />
+        <p>El mundo digital de KFC Ecuador. La KM fue absorbida. El Coronel sabe más de lo que dice.</p>
+      </div>
+      <div class="f-cols">
+        <div class="f-col">
+          <h4>Navega</h4>
+          <a href="#mundo">El mundo</a>
+          <a href="#entrar">Cómo entrar</a>
+          <a href="https://www.roblox.com/games/87467127448241/KFC-KRUNCH-WORLD" target="_blank" rel="noopener">Jugar ahora</a>
+        </div>
+        <div class="f-col">
+          <h4>Legal</h4>
+          <a href="#">Política de privacidad</a>
+          <a href="#">Términos de uso</a>
+          <a href="#">Contacto</a>
+        </div>
+        <div class="f-col f-badge">
+          <h4>Disponible en</h4>
+          <img src="a/roblox.webp" alt="Now on Roblox" />
+        </div>
+      </div>
+    </div>
+    <div class="legal">
+      <p>KRUNCH WORLD es una experiencia de entretenimiento digital disponible en la plataforma Roblox. No está afiliada, patrocinada ni respaldada oficialmente por Roblox Corporation. "Roblox" y el logotipo "Now on Roblox" son marcas de Roblox Corporation.</p>
+      <span class="cr">© 2026 KFC Ecuador.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.documentElement.classList.add('js');
+/* header solidify */
+const hdr=document.getElementById('hdr');
+addEventListener('scroll',()=>hdr.classList.toggle('solid',scrollY>40),{passive:true});
+
+/* tabs */
+document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>{
+  document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+  document.querySelectorAll('.steps').forEach(x=>x.classList.remove('show'));
+  t.classList.add('active');
+  document.getElementById('tab-'+t.dataset.tab).classList.add('show');
+}));
+
+/* trailer modal */
+const modal=document.getElementById('trailerModal'),vid=document.getElementById('trailerVid');
+function openM(){modal.classList.add('open');vid.play().catch(()=>{})}
+function closeM(){modal.classList.remove('open');vid.pause();vid.currentTime=0}
+document.getElementById('openTrailer').addEventListener('click',openM);
+document.getElementById('closeTrailer').addEventListener('click',closeM);
+modal.addEventListener('click',e=>{if(e.target===modal)closeM()});
+addEventListener('keydown',e=>{if(e.key==='Escape')closeM()});
+
+/* parallax cast + bg (desktop, pointer) */
+const cast=document.getElementById('cast'),kv=document.getElementById('kvbg');
+if(matchMedia('(pointer:fine)').matches){
+  addEventListener('mousemove',e=>{
+    const x=(e.clientX/innerWidth-.5),y=(e.clientY/innerHeight-.5);
+    cast.querySelectorAll('figure').forEach(f=>{
+      const d=+f.dataset.depth;
+      f.style.translate=(x*d)+'px '+(y*d*.5)+'px';
+    });
+    if(kv)kv.style.translate=(x*-14)+'px '+(y*-10)+'px';
+  },{passive:true});
+}
+
+/* reveal on scroll */
+const io=new IntersectionObserver((es)=>es.forEach(en=>{if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}}),{threshold:.18});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
