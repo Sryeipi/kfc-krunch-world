@@ -33,15 +33,15 @@ html,body{margin:0;background:#08080a}
 #kw .eyebrow{font-family:"KFCCond";font-size:13px;letter-spacing:.26em;text-transform:uppercase;color:var(--red-2);display:inline-flex;align-items:center;gap:10px}
 #kw .eyebrow::before{content:"";width:26px;height:9px;background:var(--red);clip-path:polygon(0 0,100% 0,100% 100%,18% 100%)}
 /* buttons */
-#kw .btn{position:relative;display:inline-flex;align-items:center;justify-content:center;min-height:48px;gap:10px;font-family:"KFCCond";text-transform:uppercase;letter-spacing:.04em;font-size:16px;line-height:1;padding:15px 28px;background:var(--red);color:#fff;border:2px solid transparent;cursor:pointer;clip-path:polygon(0 0,100% 0,100% 72%,calc(100% - 14px) 100%,0 100%);transition:transform .2s var(--ease),background .25s,box-shadow .3s var(--ease),border-color .25s,color .25s;box-shadow:0 10px 30px -10px rgba(228,0,43,.8)}
-#kw .btn::after{content:"";position:absolute;inset:4px;border:1px solid rgba(255,255,255,.22);pointer-events:none;clip-path:inherit}
-#kw .btn:hover{transform:translateY(-2px);background:var(--red-2);box-shadow:0 16px 40px -10px rgba(228,0,43,1)}
+#kw .btn{position:relative;display:inline-flex;align-items:center;justify-content:center;min-height:50px;gap:10px;font-family:"KFCCond";text-transform:uppercase;letter-spacing:.05em;font-size:16px;line-height:1;padding:16px 32px;background:var(--red);color:#fff;border:2px solid var(--red);border-radius:6px;cursor:pointer;transition:transform .2s var(--ease),background .25s,box-shadow .3s var(--ease),border-color .25s,color .25s;box-shadow:0 12px 30px -12px rgba(228,0,43,.9)}
+#kw .btn::after{display:none}
+#kw .btn:hover{transform:translateY(-2px);background:var(--red-2);border-color:var(--red-2);box-shadow:0 18px 42px -12px rgba(228,0,43,1)}
 #kw .btn:active{transform:translateY(0)}
 #kw .btn:focus-visible{outline:3px solid #fff;outline-offset:4px}
-#kw .btn.ghost{background:rgba(0,0,0,.26);border:2px solid rgba(255,255,255,.35);box-shadow:none;clip-path:none}
+#kw .btn.ghost{background:rgba(255,255,255,.04);border:2px solid rgba(255,255,255,.4);box-shadow:none;color:#fff}
 #kw .btn.ghost::after{display:none}
-#kw .btn.ghost:hover{background:rgba(255,255,255,.11);border-color:#fff}
-#kw .btn.big{font-size:19px;padding:18px 36px}
+#kw .btn.ghost:hover{background:#fff;border-color:#fff;color:#0a0a0c}
+#kw .btn.big{font-size:18px;padding:18px 38px;min-height:56px}
 #kw .btn .ar{transition:transform .25s var(--ease)}
 #kw .btn:hover .ar{transform:translateX(4px)}
 /* header */
@@ -81,11 +81,11 @@ html,body{margin:0;background:#08080a}
 #kw .hero h1{margin:0 0 14px;position:relative}
 #kw .hero h1 img{width:min(560px,92%);filter:drop-shadow(0 0 32px rgba(228,0,43,.45)) drop-shadow(0 14px 30px rgba(0,0,0,.6))}
 @media(max-width:980px){#kw .hero h1 img{margin-inline:auto;width:min(420px,84vw)}}
-#kw .hero .lead{font-size:clamp(17px,1.9vw,20px);max-width:25ch;color:#fff;margin:0 0 8px;text-shadow:0 2px 18px rgba(0,0,0,.55)}
+#kw .hero .lead{font-size:clamp(18px,2vw,22px);max-width:30ch;color:#f3eef5;margin:0 0 8px;text-shadow:0 2px 18px rgba(0,0,0,.6)}
 @media(max-width:980px){#kw .hero .lead{margin-inline:auto}}
 #kw .stats{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0 26px}
 @media(max-width:980px){#kw .stats{justify-content:center}}
-#kw .stats span{font-family:"KFCCond";font-size:12px;letter-spacing:.04em;text-transform:uppercase;padding:7px 12px;background:rgba(255,255,255,.06);border-left:3px solid var(--red);color:#fff}
+#kw .stats span{font-family:"KFCCond";font-size:13px;letter-spacing:.05em;text-transform:uppercase;padding:8px 14px;background:rgba(255,255,255,.08);border-left:3px solid var(--red);color:#fff}
 #kw .cta-row{display:flex;gap:14px;flex-wrap:wrap}
 @media(max-width:980px){#kw .cta-row{justify-content:center}}
 /* cast */
@@ -96,10 +96,10 @@ html,body{margin:0;background:#08080a}
 #kw .cast figure{position:absolute;left:var(--char-left);bottom:var(--char-bottom,48px);height:var(--char-h);filter:drop-shadow(0 24px 26px rgba(0,0,0,.6));transform:translateX(var(--char-x,-50%));transform-origin:50% 100%}
 #kw .cast figure img{width:auto;height:100%;object-fit:contain}
 #kw .cast .tag,#kw .cast .label,#kw .cast .nameplate,#kw .cast .hero-tag,#kw .cast [class*="goat"]{display:none!important}
-#kw .cast .c-coronel{--char-left:15%;--char-h:clamp(215px,20vw,300px);z-index:2;opacity:1;animation:kwfloatB 7s ease-in-out infinite}
-#kw .cast .c-km{--char-left:85%;--char-h:clamp(210px,19.5vw,290px);z-index:2;opacity:1;animation:kwfloatB 7.6s ease-in-out infinite .4s}
-#kw .cast .c-pacho{--char-left:50%;--char-h:clamp(265px,26vw,360px);z-index:4;animation:kwfloatA 6s ease-in-out infinite}
-@media(max-width:980px){#kw .cast .c-coronel{--char-left:16%;--char-bottom:34px;--char-h:clamp(180px,26vw,250px)}#kw .cast .c-km{--char-left:84%;--char-bottom:36px;--char-h:clamp(174px,25vw,240px)}#kw .cast .c-pacho{--char-left:50%;--char-bottom:24px;--char-h:clamp(240px,40vw,340px)}}
+#kw .cast .c-coronel{--char-left:12%;--char-h:clamp(190px,17vw,255px);z-index:2;opacity:1;animation:kwfloatB 7s ease-in-out infinite}
+#kw .cast .c-km{--char-left:88%;--char-h:clamp(185px,16.5vw,245px);z-index:2;opacity:1;animation:kwfloatB 7.6s ease-in-out infinite .4s}
+#kw .cast .c-pacho{--char-left:50%;--char-h:clamp(290px,28vw,400px);z-index:4;animation:kwfloatA 6s ease-in-out infinite}
+@media(max-width:980px){#kw .cast .c-coronel{--char-left:13%;--char-bottom:34px;--char-h:clamp(155px,22vw,215px)}#kw .cast .c-km{--char-left:87%;--char-bottom:36px;--char-h:clamp(150px,21vw,208px)}#kw .cast .c-pacho{--char-left:50%;--char-bottom:24px;--char-h:clamp(230px,40vw,330px)}}
 @media(max-width:540px){#kw .hero{padding-top:78px}#kw .badge{margin-bottom:10px}#kw .hero h1{margin-bottom:8px}#kw .hero h1 img{width:min(286px,78vw)}#kw .hero .lead{font-size:16px;line-height:1.32;max-width:28ch}#kw .stats{gap:7px;margin:10px 0 16px}#kw .stats span{font-size:11px;padding:6px 9px}#kw .cta-row{gap:10px}#kw .btn.big{min-height:46px;font-size:15px;padding:13px 22px}#kw .cast{height:286px;min-height:286px;margin-top:0}#kw .cast .pedestal{width:78%}#kw .cast .floor{width:66%;height:78px}#kw .cast .c-coronel{--char-left:15%;--char-bottom:38px;--char-h:clamp(118px,30vw,150px)}#kw .cast .c-km{--char-left:85%;--char-bottom:40px;--char-h:clamp(114px,29vw,146px)}#kw .cast .c-pacho{--char-left:50%;--char-bottom:28px;--char-h:clamp(168px,44vw,210px)}}
 @keyframes kwfloatA{0%,100%{transform:translateX(var(--char-x,-50%)) translateY(0)}50%{transform:translateX(var(--char-x,-50%)) translateY(-14px)}}
 @keyframes kwfloatB{0%,100%{transform:translateX(var(--char-x,-50%)) translateY(0)}50%{transform:translateX(var(--char-x,-50%)) translateY(-10px)}}
